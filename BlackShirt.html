@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c9e6599a2.js" crossorigin="anonymous"></script>
+    <title>Clothes Store</title>
+</head>
+<body>
+    <header class="h1">
+        <a>Clothes Store</a>
+    </header>
+
+    <section class="Main">
+        <img src="Black.jpg">
+        <h2>Black T-Shirt</h2>
+        <h4>Price: 32$</h4>
+        <button class="BuyButton" onclick="Buy()">Buy</button>
+    </section>
+
+</body>
+</html>
+
+<style>
+        * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+
+    header a {
+        padding: 4px;
+        font-family: Poppins;
+        font-weight: 600;
+        font-size: 22px;
+        color:rgba(0, 114, 114, 0.932);
+    }
+
+    body {
+        background-color: #ffffff8e;
+    }
+
+    .h1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 200px;
+        background-color: aqua;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    img {
+        width: 400px;
+        height: 400px;
+        position: relative;
+        left: 100px;
+        top: 40px
+
+    }
+
+    h2 {
+        position: relative;
+        left: 640px;
+        bottom: 241px;
+        font-size: 32px;
+    }
+
+    h4 {
+        position: relative;
+        left: 640px;
+        bottom: 211px;
+        font-size: 24px;
+    }
+
+    .BuyButton {
+        padding: 12px;
+        width: 132px;
+        position: relative;
+        top: -162px;
+        left: 640px;
+        background-color: aqua;
+        border-radius: 12px;
+        border-color: aquamarine;
+    }
+
+    .Main {
+        position: relative;
+        top: 40px;
+    }
+</style>
+
+<script>
+    function Buy() {
+        alert("Are you sure you want to buy this item? It costs you 32$", Buy);
+        document.querySelector(".BuyButton").style.backgroundColor = "yellow";
+        document.querySelector(".BuyButton").innerHTML = "Sold";
+        document.querySelector(".BuyButton").style.borderColor = "lightyellow";
+    }
+</script>
