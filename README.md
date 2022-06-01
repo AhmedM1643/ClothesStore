@@ -1,1 +1,1 @@
-# www.AhmedClothesStore.com
+# AhmedClothesStore.com
