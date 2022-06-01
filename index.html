@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c9e6599a2.js" crossorigin="anonymous"></script>
+    <title>Clothes Store</title>
+</head>
+<body>
+    <header class="h1">
+        <a>Clothes Store</a>
+    </header>
+
+    <div class="flex">
+        <div class="search">
+            <form class="In"><i class="fa-solid fa-magnifying-glass fa-1x"></i><input type="text" name="SearchBar"placeholder="Search" onkeyup="Search()" id="SearchBar"></form>
+        </div>
+    </div>
+
+    <section class="MainProducts">
+        <div class="Product-List" id="ProductList">
+
+                <div class="product">
+                    <div class="Product">
+                        <a href="ClothStore/BlackShirt.html"><img src="Images/Black.jpg"></a>
+                        <h2>Black T-Shirt</h2>
+                        <h4>$32</h4>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="Product">
+                        <a href="ClothStore/GreenShirt.html"><img src="Images/Green.jpg"></a>
+                        <h2>Green T-Shirt</h2>
+                        <h4>$30</h4>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="Product">
+                        <img src="Images/Yellow.jpg">
+                        <h2>Yellow T-Shirt</h2>
+                        <h4>$30</h4>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="Product">
+                        <img src="Images/Red.jpg">
+                        <h2>Red T-Shirt</h2>
+                        <h4>$32</h4>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="Product">
+                        <img src="Images/Blue.jpg">
+                        <h2>Blue T-Shirt</h2>
+                        <h4>$35</h4>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="Product">
+                        <img src="Images/Grey.jpg">
+                        <h2>Grey T-Shirt</h2>
+                        <h4>$28</h4>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        scroll-behavior: smooth;
+    }
+
+    header a {
+        padding: 4px;
+        font-family: Poppins;
+        font-weight: 600;
+        font-size: 22px;
+        color:rgba(0, 114, 114, 0.932);
+    }
+
+    body {
+        background-color: #ffffff8e;
+    }
+
+    .h1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 200px;
+        background-color: aqua;
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .In {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        width: 100%;
+        border-radius: 111px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid black;
+    }
+
+    input {
+        width: 400px;
+        height: 30px;
+        border-style: none;
+        border-radius: 10px;
+        border: none;
+        box-shadow: none;
+        outline: none;
+    }
+
+    i {
+        position: relative;
+        left: -6px;
+        top: 7px;
+    }
+
+    .search {
+        width: 500px;
+    }
+
+    .flex {
+        display: flex;
+        justify-content: center;
+        padding-top:124px;
+        padding-bottom:24px;
+        
+    }
+
+    .Product-List {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: center;
+        width: 70%;
+        height: 100%;
+        background-color:#ffffff8e;
+    }
+
+    .MainProducts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 21px;
+    }
+
+    img {
+        width: 100%;
+        height: 209px;
+    }
+
+    .Product {
+        padding:11px;
+        background-color: aquamarine;
+        width: 222px;
+    }
+
+    h2 {
+        text-align: center;
+        padding: 11px;
+    }
+
+    h4 {
+        text-align: center;
+        padding: 4px;
+    }
+
+    .product {
+        padding: 11px;
+    }
+
+
+</style>
+
+<script>
+    const Search = () =>{
+        const SearchBar = document.getElementById("SearchBar").value.toUpperCase();
+        const StoreItems = document.getElementById("ProductList")
+        const Product = document.querySelectorAll(".Product")
+        const ProductName = StoreItems.getElementsByTagName("h2")
+
+        for( var i=0; i < ProductName.length; i++) {
+            let match = Product[i].getElementsByTagName("h2")[0];
+
+            if (match) {
+                let TextValue = match.textContent || match.innerHTML
+
+                if (TextValue.toUpperCase().indexOf(SearchBar) > -1) {
+                    Product[i].style.display = "";
+                }
+                else {
+                    Product[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function Button1Click() {
+        document.querySelector(".MainProducts").style.display = "none";
+    }
+
+
+</script>
